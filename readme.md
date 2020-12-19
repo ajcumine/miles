@@ -10,8 +10,9 @@ I intend to have a single Elixir backend API to serve one or more frontend proje
 
 One of the major disadvantages of using a monorepo are performance problems caused by the amount of code that could eventually end up in one repository. I do not expect this to be a problem for some time so this should be avoided.
 
-
 ## Structure
+
+The monorepo contains the following subdirectories
 
 ```
 |
@@ -20,7 +21,29 @@ One of the major disadvantages of using a monorepo are performance problems caus
 ```
 
 ### API
+
 Elixir/Phoenix API backend
 
-### app
+### App
+
 React based PWA for the website
+
+# Setup and Run
+
+## Environment Variables
+
+Environment variables are drawn from the `.env` file at the root directory while will need to match those given in the `.env.example` file. This will need to be created and populated.
+
+## Database
+
+Dockerised PostgreSQL Database
+
+To run the database you will need to install Docker, then run `docker-compose up -d` to run a silent psql db.
+
+### Why Docker?
+
+Docker enables you to create an container environment that will run on any platform that can run docker. This way you only have to install the Docker platform and Docker will manage the rest of the dependancies
+
+### Why PostgreSQL?
+
+PostgreSQL is often used as the default database in backend frameworks so has excellent support.
