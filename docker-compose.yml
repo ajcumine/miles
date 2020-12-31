@@ -1,19 +1,5 @@
 version: "3.9"
 services:
-  api:
-    build:
-      context: ./api
-      dockerfile: ./Dockerfile
-    ports:
-      - "4000:4000"
-    environment:
-      PGDATABASE: $PG_DATABASE
-      PGUSER: $PG_USER
-      PGPASSWORD: $PG_PASSWORD
-      PGPORT: 5432
-      PGHOST: db
-    depends_on:
-      - db
   db:
     image: "postgres:13"
     ports:

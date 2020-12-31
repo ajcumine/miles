@@ -10,4 +10,4 @@ RUN mix archive.install hex phx_new 1.5.7 --force
 WORKDIR /opt/api
 COPY . .
 
-ENTRYPOINT [ "/opt/api/entrypoint.sh" ]
+ENTRYPOINT [ "/opt/api/build/prod.entrypoint.sh" ]
