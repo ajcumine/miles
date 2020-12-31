@@ -28,7 +28,7 @@ Elixir/Phoenix API backend
 
 React based PWA for the website
 
-# Setup and Run
+# Development Setup and Run
 
 ## Environment Variables
 
@@ -38,7 +38,7 @@ Environment variables are drawn from the `.env` file at the root directory while
 
 Dockerised PostgreSQL Database
 
-To run the database you will need to install Docker, then run `docker-compose up -d` to run a silent psql db.
+To run the database you will need to install Docker, then run `docker-compose up -d` to run a silent psql db. This will take environment variables from the `.env` file at the root.
 
 ### Why Docker?
 
@@ -47,3 +47,11 @@ Docker enables you to create an container environment that will run on any platf
 ### Why PostgreSQL?
 
 PostgreSQL is often used as the default database in backend frameworks so has excellent support.
+
+## API
+
+Elixir/Phoenix API
+
+To run the API you will need Elixir and Phoenix installed. Both have very well structured and up to date installation pages on their websites.
+
+When installed and with the database running, run `mix phx.server` in the `/api` directory to start the API at [localhost:4000](http://localhost:4000).
