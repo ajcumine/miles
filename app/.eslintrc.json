@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "sort-imports": "error"
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}
