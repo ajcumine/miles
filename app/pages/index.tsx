@@ -1,23 +1,21 @@
+import Footer from 'components/footer';
+import HeaderImage from 'components/header-image';
+import InfoPanel from 'components/info-panel';
 import Page from 'components/page';
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = styled.h1`
-  color: red;
+const ContentWrapper = styled.div`
+  flex: 1 0 auto;
 `;
 
 const Home = () => (
   <Page>
-    <div>
-      <Title>Andrew Cumine</Title>
-      <h3>Full Stack Software Engineer</h3>
-    </div>
-    <div>
-      Footer
-      <p>github</p>
-      <p>twitter</p>
-      <p>twitch</p>
-    </div>
+    <ContentWrapper>
+      <HeaderImage />
+      <InfoPanel />
+    </ContentWrapper>
+    <Footer />
   </Page>
 );
 

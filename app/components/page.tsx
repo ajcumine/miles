@@ -5,6 +5,8 @@ const Wrapper = styled.div`
   background: #ffd500;
   height: 100%;
   font-family: 'Fira Code';
+  display: flex;
+  flex-direction: column;
 `;
 
 const Page = ({ children }: { children: React.ReactNode }) => (
