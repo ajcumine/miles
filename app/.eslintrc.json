@@ -10,6 +10,7 @@
     "react/jsx-props-no-spreading": 0,
     "sort-imports": "error"
   },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   }
