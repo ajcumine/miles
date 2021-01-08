@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import styles from 'styles/variables';
 
 const Wrapper = styled.div`
-  background: #ffd500;
+  background: ${styles.color.yellow};
   height: 100%;
   font-family: 'Fira Code';
   display: flex;

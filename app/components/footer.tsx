@@ -7,6 +7,7 @@ const FooterWrapper = styled.footer`
   flex-shrink: 0;
   height: 4.8rem;
   padding: 1.2rem;
+  overflow: hidden;
 `;
 
 const Footer = () => (

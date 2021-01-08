@@ -20,7 +20,8 @@
     "pretty": true,
     "baseUrl": "./",
     "paths": {
-      "components/*": ["./components/*"]
+      "components/*": ["./components/*"],
+      "styles/*": ["./styles/*"]
     }
   },
   "include": [
