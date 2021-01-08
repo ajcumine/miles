@@ -4,7 +4,7 @@ const color = {
 
 const size = {
   mobile: '360px',
-  tablet: '768px',
+  tablet: '900px',
   desktop: '1200px',
 };
 

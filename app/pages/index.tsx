@@ -8,16 +8,16 @@ import styles from 'styles/variables';
 
 const ContentWrapper = styled.div`
   flex: 1 0 auto;
-  padding: 0 1.6rem;
+  margin: 0 1.6rem;
 
   @media (min-width: ${styles.size.tablet}) {
-    max-width: 90rem;
+    max-width: 860px;
     margin 0 auto;
     width: 100%;
   }
 
   @media (min-width: ${styles.size.desktop}) {
-    max-width: 110rem;
+    max-width: 1100px;
   }
 `;
 
