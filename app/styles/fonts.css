@@ -15,7 +15,12 @@ h3 {
   margin-bottom: 1.2rem;
 }
 
+a,
 p {
   font-size: 1.6em;
   margin-bottom: 0.8rem;
+}
+
+a {
+  text-decoration: none;
 }

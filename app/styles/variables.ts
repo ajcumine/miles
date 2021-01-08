@@ -1,4 +1,5 @@
 const color = {
+  black: '#141414',
   yellow: '#ffd500',
 };
 
