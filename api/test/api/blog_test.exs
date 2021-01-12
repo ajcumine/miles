@@ -6,9 +6,9 @@ defmodule Api.BlogTest do
   describe "posts" do
     alias Api.Blog.Post
 
-    @valid_attrs %{body: "some body", created_at: "2010-04-17T14:00:00Z", id: "7488a646-e31f-11e4-aace-600308960662", title: "some title"}
-    @update_attrs %{body: "some updated body", created_at: "2011-05-18T15:01:01Z", id: "7488a646-e31f-11e4-aace-600308960668", title: "some updated title"}
-    @invalid_attrs %{body: nil, created_at: nil, id: nil, title: nil}
+    @valid_attrs %{body: "some body", title: "some title"}
+    @update_attrs %{body: "some updated body", title: "some updated title"}
+    @invalid_attrs %{body: nil, title: nil}
 
     def post_fixture(attrs \\ %{}) do
       {:ok, post} =

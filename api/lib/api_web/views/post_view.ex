@@ -11,9 +11,6 @@ defmodule ApiWeb.PostView do
   end
 
   def render("post.json", %{post: post}) do
-    %{title: post.title,
-      id: post.id,
-      body: post.body,
-      created_at: post.inserted_at}
+    %{title: post.title, id: post.id, body: post.body, created_at: post.created_at}
   end
 end

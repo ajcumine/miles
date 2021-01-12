@@ -6,9 +6,8 @@ defmodule Api.Repo.Migrations.CreatePosts do
       add :title, :string
       add :id, :uuid, primary_key: true
       add :body, :text
-      add :created_at, :utc_datetime
 
-      timestamps()
+      timestamps(type: :utc_datetime_usec, inserted_at: :created_at)
     end
 
   end
