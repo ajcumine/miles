@@ -1,6 +1,7 @@
 defmodule Api.BlogTest do
   use Api.DataCase
 
+  alias Api.Clock
   alias Api.Blog
 
   describe "posts" do
@@ -30,10 +31,12 @@ defmodule Api.BlogTest do
     end
 
     test "create_post/1 with valid data creates a post" do
+      Clock.freeze()
+      time_now = Clock.utc_now()
       assert {:ok, %Post{} = post} = Blog.create_post(@valid_attrs)
       assert post.body == "some body"
-      assert post.created_at == DateTime.from_naive!(~N[2010-04-17T14:00:00Z], "Etc/UTC")
-      assert post.id == "7488a646-e31f-11e4-aace-600308960662"
+      assert post.created_at == time_now
+      assert String.length(post.id) == 36
       assert post.title == "some title"
     end
 
@@ -42,11 +45,13 @@ defmodule Api.BlogTest do
     end
 
     test "update_post/2 with valid data updates the post" do
+      Clock.freeze()
+      time_now = Clock.utc_now()
       post = post_fixture()
       assert {:ok, %Post{} = post} = Blog.update_post(post, @update_attrs)
       assert post.body == "some updated body"
-      assert post.created_at == DateTime.from_naive!(~N[2011-05-18T15:01:01Z], "Etc/UTC")
-      assert post.id == "7488a646-e31f-11e4-aace-600308960668"
+      assert post.created_at == time_now
+      assert String.length(post.id) == 36
       assert post.title == "some updated title"
     end
 

@@ -3,20 +3,17 @@ defmodule ApiWeb.PostControllerTest do
 
   alias Api.Blog
   alias Api.Blog.Post
+  alias Api.Clock
 
   @create_attrs %{
     body: "some body",
-    created_at: "2010-04-17T14:00:00Z",
-    id: "7488a646-e31f-11e4-aace-600308960662",
     title: "some title"
   }
   @update_attrs %{
     body: "some updated body",
-    created_at: "2011-05-18T15:01:01Z",
-    id: "7488a646-e31f-11e4-aace-600308960668",
     title: "some updated title"
   }
-  @invalid_attrs %{body: nil, created_at: nil, id: nil, title: nil}
+  @invalid_attrs %{body: nil, title: nil}
 
   def fixture(:post) do
     {:ok, post} = Blog.create_post(@create_attrs)
@@ -36,16 +33,17 @@ defmodule ApiWeb.PostControllerTest do
 
   describe "create post" do
     test "renders post when data is valid", %{conn: conn} do
+      Clock.freeze()
+      _time_now = Clock.utc_now() |> DateTime.to_iso8601()
       conn = post(conn, Routes.post_path(conn, :create), post: @create_attrs)
       assert %{"id" => id} = json_response(conn, 201)["data"]
 
       conn = get(conn, Routes.post_path(conn, :show, id))
 
       assert %{
-               "id" => id,
+               "id" => _id,
                "body" => "some body",
-               "created_at" => "2010-04-17T14:00:00Z",
-               "id" => "7488a646-e31f-11e4-aace-600308960662",
+               "created_at" => _time_now,
                "title" => "some title"
              } = json_response(conn, 200)["data"]
     end
@@ -60,16 +58,18 @@ defmodule ApiWeb.PostControllerTest do
     setup [:create_post]
 
     test "renders post when data is valid", %{conn: conn, post: %Post{id: id} = post} do
+      Clock.freeze()
+      _time_now = Clock.utc_now() |> DateTime.to_iso8601()
+
       conn = put(conn, Routes.post_path(conn, :update, post), post: @update_attrs)
       assert %{"id" => ^id} = json_response(conn, 200)["data"]
 
       conn = get(conn, Routes.post_path(conn, :show, id))
 
       assert %{
-               "id" => id,
+               "id" => _id,
                "body" => "some updated body",
-               "created_at" => "2011-05-18T15:01:01Z",
-               "id" => "7488a646-e31f-11e4-aace-600308960668",
+               "created_at" => _time_now,
                "title" => "some updated title"
              } = json_response(conn, 200)["data"]
     end
