@@ -13,6 +13,6 @@
 alias Api.Repo
 alias Api.Blog.Post
 
-Repo.insert! %Post{title: "Post 1 Title", body: "Body of blog post 1"}
-Repo.insert! %Post{title: "Post 2 Title", body: "Body of blog post 2"}
-Repo.insert! %Post{title: "Post 3 Title", body: "Body of blog post 3"}
+Repo.insert!(%Post{title: "Post 1 Title", body: "Body of blog post 1"})
+Repo.insert!(%Post{title: "Post 2 Title", body: "Body of blog post 2"})
+Repo.insert!(%Post{title: "Post 3 Title", body: "Body of blog post 3"})

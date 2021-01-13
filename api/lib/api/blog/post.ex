@@ -3,8 +3,8 @@ defmodule Api.Blog.Post do
   import Ecto.Changeset
 
   schema "posts" do
-    field :body, :string
-    field :title, :string
+    field(:body, :string)
+    field(:title, :string)
 
     timestamps()
   end
